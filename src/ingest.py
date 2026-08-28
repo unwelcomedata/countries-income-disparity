@@ -304,3 +304,207 @@ def ingest_source(
         return parse_html_scrape(html, row_selector, field_map)
 
     raise ValueError(f"Unknown source type '{source_type}'. Use: html_table, html_scrape, csv, json.")
+
+
+# ---------------------------------------------------------------------------
+# World Bank API v2 — Indicator Bulk Download
+# ---------------------------------------------------------------------------
+# The World Bank API is free, no key required, generous rate limits.
+# Returns paginated JSON with country-year observations.
+# Docs: https://datahelpdesk.worldbank.org/knowledgebase/articles/898599
+# ---------------------------------------------------------------------------
+
+
+def ingest_world_bank_indicator(
+    cfg: dict,
+    indicator_code: str,
+    indicator_name: str,
+    date_range: str = "1960:2025",
+    per_page: int = 1000,
+    save_raw: bool = True,
+) -> pd.DataFrame:
+    """Fetch a single World Bank indicator for all countries.
+
+    Handles pagination automatically. Saves raw JSON to data/raw/.
+
+    Args:
+        cfg:            Loaded config dict.
+        indicator_code: WDI indicator code (e.g., "SI.POV.GINI").
+        indicator_name: Human-readable name for logging.
+        date_range:     Year range as "YYYY:YYYY".
+        per_page:       Records per page (max 1000).
+        save_raw:       Save raw JSON response to data/raw/.
+
+    Returns:
+        DataFrame with columns: country_code, country_name, year, value, indicator.
+    """
+    source = cfg["sources"]["world_bank"]
+    base_url = source["base_url"]
+    rate_limit = cfg["settings"].get("rate_limit_seconds", 1.5)
+
+    url = f"{base_url}/country/all/indicator/{indicator_code}"
+    params = {
+        "format": "json",
+        "per_page": per_page,
+        "date": date_range,
+        "page": 1,
+    }
+
+    all_records = []
+    page = 1
+    total_pages = 1  # will be updated from first response
+
+    while page <= total_pages:
+        params["page"] = page
+        resp = requests.get(url, params=params, timeout=60)
+        resp.raise_for_status()
+        data = resp.json()
+
+        # First element is metadata, second is data array
+        if len(data) < 2 or data[1] is None:
+            break
+
+        metadata = data[0]
+        records = data[1]
+        total_pages = metadata.get("pages", 1)
+
+        for rec in records:
+            if rec.get("value") is not None:
+                all_records.append({
+                    "country_code": rec["country"]["id"],
+                    "country_name": rec["country"]["value"],
+                    "year": int(rec["date"]),
+                    "value": float(rec["value"]),
+                    "indicator": indicator_code,
+                })
+
+        page += 1
+        if page <= total_pages:
+            time.sleep(rate_limit)
+
+    df = pd.DataFrame(all_records)
+
+    if save_raw and not df.empty:
+        filename = f"wb_{indicator_code.replace('.', '_').lower()}.parquet"
+        dest = raw_path(cfg, filename)
+        df.to_parquet(dest, index=False)
+
+    return df
+
+
+def ingest_world_bank_all(
+    cfg: dict,
+    indicators: list[dict] | None = None,
+    skip_existing: bool = True,
+) -> pd.DataFrame:
+    """Fetch all configured World Bank indicators.
+
+    Args:
+        cfg:            Loaded config dict.
+        indicators:     Override list of {"code": ..., "name": ...} dicts.
+                        If None, uses config sources.world_bank.indicators.
+        skip_existing:  If True, skip indicators that already have raw parquet files.
+
+    Returns:
+        Combined DataFrame with all indicators (long format).
+    """
+    source = cfg["sources"]["world_bank"]
+    indicator_list = indicators or source["indicators"]
+    date_range = source.get("date_range", "1960:2025")
+    per_page = source.get("per_page", 1000)
+
+    all_frames = []
+    total = len(indicator_list)
+
+    print(f"=== World Bank Indicator Ingest ===")
+    print(f"  Indicators: {total}")
+    print(f"  Date range: {date_range}")
+    print()
+
+    for i, ind in enumerate(indicator_list, 1):
+        code = ind["code"]
+        name = ind["name"]
+        filename = f"wb_{code.replace('.', '_').lower()}.parquet"
+        dest = raw_path(cfg, filename)
+
+        if skip_existing and dest.exists():
+            print(f"  [{i}/{total}] skip (exists): {code} — {name}")
+            df = pd.read_parquet(dest)
+            all_frames.append(df)
+            continue
+
+        print(f"  [{i}/{total}] fetching: {code} — {name}")
+        try:
+            df = ingest_world_bank_indicator(
+                cfg, code, name, date_range=date_range, per_page=per_page
+            )
+            if not df.empty:
+                all_frames.append(df)
+                print(f"           → {len(df):,} observations")
+            else:
+                print(f"           → (no data)")
+        except requests.HTTPError as e:
+            print(f"           → FAILED: {e}")
+            continue
+
+    if all_frames:
+        combined = pd.concat(all_frames, ignore_index=True)
+    else:
+        combined = pd.DataFrame()
+
+    print(f"\n  Total: {len(combined):,} observations across {combined['indicator'].nunique() if not combined.empty else 0} indicators")
+    return combined
+
+
+# ---------------------------------------------------------------------------
+# ISO 3166-1 Country Codes Reference Table
+# ---------------------------------------------------------------------------
+
+def ingest_iso_countries(cfg: dict, skip_existing: bool = True) -> pd.DataFrame:
+    """Download and parse the ISO 3166-1 country codes CSV.
+
+    Returns DataFrame with: alpha-2, alpha-3, numeric, name, region, sub-region.
+    """
+    source = cfg["sources"]["iso_countries"]
+    url = source["url"]
+    dest = raw_path(cfg, "iso_countries.csv")
+
+    if skip_existing and dest.exists():
+        print("  ISO countries: skip (exists)")
+        return pd.read_csv(dest)
+
+    print("  Downloading ISO 3166-1 country codes...")
+    download_file(url, dest)
+    df = pd.read_csv(dest)
+    print(f"  → {len(df)} entries")
+    return df
+
+
+# ---------------------------------------------------------------------------
+# Full ingest orchestrator
+# ---------------------------------------------------------------------------
+
+def ingest_all(cfg: dict, skip_existing: bool = True) -> dict[str, pd.DataFrame]:
+    """Run full countries ingest: ISO codes + all World Bank indicators.
+
+    Returns dict with 'iso_countries' and 'indicators' DataFrames.
+    """
+    print("=" * 60)
+    print("  COUNTRIES INCOME DISPARITY — FULL INGEST")
+    print("=" * 60)
+    print()
+
+    # 1. ISO country codes
+    print("--- ISO 3166-1 Country Codes ---")
+    df_iso = ingest_iso_countries(cfg, skip_existing=skip_existing)
+    print()
+
+    # 2. World Bank indicators
+    print("--- World Bank Indicators ---")
+    df_indicators = ingest_world_bank_all(cfg, skip_existing=skip_existing)
+    print()
+
+    return {
+        "iso_countries": df_iso,
+        "indicators": df_indicators,
+    }

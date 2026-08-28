@@ -13,24 +13,80 @@ settings:
   encoding: utf-8
   parquet_engine: pyarrow
   duckdb_file: data/project.duckdb   # single file DB for the project
+  rate_limit_seconds: 1.5            # polite delay between HTTP requests
 
 sources:
-  # Define each data source here before ingesting.
-  # url:        full URL to fetch
-  # type:       html_table | html_scrape | csv | json
-  # table_index: (html_table only) zero-based index of the target <table>
-  # js_render:  true if the page requires Playwright (JS-rendered)
-  # Example:
-  # fatalities:
-  #   url: https://example.gov/data/fatalities
-  #   type: html_table
-  #   table_index: 0
-  #   js_render: false
+  # -------------------------------------------------------------------------
+  # World Bank API v2 — World Development Indicators
+  # Base: https://api.worldbank.org/v2/country/all/indicator/{CODE}
+  # Format: JSON, paginated (per_page=1000 max)
+  # License: Creative Commons Attribution 4.0 (CC-BY 4.0)
+  # -------------------------------------------------------------------------
+  world_bank:
+    base_url: "https://api.worldbank.org/v2"
+    type: api_json
+    date_range: "1960:2025"
+    per_page: 1000
+    indicators:
+      - code: "SP.POP.TOTL"
+        name: "Population, total"
+      - code: "NY.GDP.PCAP.PP.CD"
+        name: "GDP per capita, PPP (current international $)"
+      - code: "NY.GDP.PCAP.CD"
+        name: "GDP per capita (current US$)"
+      - code: "NY.GDP.MKTP.KD.ZG"
+        name: "GDP growth (annual %)"
+      - code: "SI.POV.GINI"
+        name: "Gini index"
+      - code: "SP.DYN.LE00.IN"
+        name: "Life expectancy at birth, total (years)"
+      - code: "SP.DYN.TFRT.IN"
+        name: "Fertility rate, total (births per woman)"
+      - code: "SP.URB.TOTL.IN.ZS"
+        name: "Urban population (% of total)"
+      - code: "SL.UEM.TOTL.ZS"
+        name: "Unemployment, total (% of labor force, ILO estimate)"
+      - code: "SI.POV.DDAY"
+        name: "Poverty headcount ratio at $2.15/day (2017 PPP)"
+      - code: "SI.POV.LMIC"
+        name: "Poverty headcount ratio at $3.65/day (2017 PPP)"
+      - code: "FP.CPI.TOTL.ZG"
+        name: "Inflation, consumer prices (annual %)"
+      - code: "NE.TRD.GNFS.ZS"
+        name: "Trade (% of GDP)"
+      - code: "IT.NET.USER.ZS"
+        name: "Individuals using the Internet (% of population)"
+      - code: "EN.ATM.CO2E.PC"
+        name: "CO2 emissions (metric tons per capita)"
+    notes: >
+      World Bank API v2 returns paginated JSON. Each indicator is fetched
+      separately for all countries. Aggregates (regions, income groups) are
+      returned alongside countries — filter by region != "" for countries only.
+
+  # -------------------------------------------------------------------------
+  # ISO 3166-1 Country Codes (reference table)
+  # Source: DataHub.io curated CSV (Luke Duncalfe / ISO)
+  # -------------------------------------------------------------------------
+  iso_countries:
+    url: "https://raw.githubusercontent.com/lukes/ISO-3166-Countries-with-Regional-Codes/master/all/all.csv"
+    type: csv
+    notes: >
+      ISO 3166-1 alpha-2, alpha-3, numeric codes plus UN geoscheme
+      region and sub-region classifications. ~250 entries including
+      territories. Primary key: alpha-3 code.
+
+  # -------------------------------------------------------------------------
+  # UNDP Human Development Index (supplemental, future phase)
+  # -------------------------------------------------------------------------
+  # undp_hdi:
+  #   url: "https://hdr.undp.org/sites/default/files/2023-24/HDR2023-24_Statistical_Annex.xlsx"
+  #   type: xlsx
+  #   notes: "Annual HDI scores by country. Requires parsing specific sheets."
 
 export:
   formats:
     - csv
     - xlsx
     - parquet
-  include_codebook: true       # generate a column-description markdown alongside each export
-  strip_pii_columns: []        # list column names to drop before packaging
+  include_codebook: true
+  strip_pii_columns: []
