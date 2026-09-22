@@ -471,12 +471,111 @@ def ingest_iso_countries(cfg: dict, skip_existing: bool = True) -> pd.DataFrame:
 
     if skip_existing and dest.exists():
         print("  ISO countries: skip (exists)")
-        return pd.read_csv(dest)
+        return _normalize_iso_columns(pd.read_csv(dest))
 
     print("  Downloading ISO 3166-1 country codes...")
     download_file(url, dest)
-    df = pd.read_csv(dest)
+    df = _normalize_iso_columns(pd.read_csv(dest))
     print(f"  → {len(df)} entries")
+    return df
+
+
+def _normalize_iso_columns(df: pd.DataFrame) -> pd.DataFrame:
+    """Normalize the ISO CSV's hyphenated headers to snake_case.
+
+    The lukes/ISO-3166 CSV ships columns like ``alpha-2`` / ``alpha-3`` /
+    ``sub-region``. Left as-is these break downstream SQL joins (``r.alpha_2``
+    doesn't exist; the column is ``"alpha-2"``). Normalizing here means every
+    caller — notebook or script — gets stable snake_case column names.
+    """
+    df = df.copy()
+    df.columns = [
+        str(c).strip().lower().replace(" ", "_").replace("-", "_") for c in df.columns
+    ]
+    return df
+
+
+# ---------------------------------------------------------------------------
+# World Bank Poverty & Inequality Platform (PIP) — welfare-metric flag
+# ---------------------------------------------------------------------------
+# WDI's SI.POV.GINI gives a Gini value but NOT whether it's income- or
+# consumption-based — the single biggest cross-country comparability hazard
+# (income Ginis run ~4.7 pts higher on average). PIP is the underlying source
+# and DOES carry that flag as `welfare_type` per country/survey year, so we pull
+# it here to attach the metric type to every Gini observation.
+#
+# API: https://api.worldbank.org/pip/v1/pip  (free, no key)
+#   country=all&year=all&reporting_level=national&format=json
+# Returns one row per country x survey year with:
+#   country_code (ISO alpha-3), reporting_year, welfare_type (income|consumption),
+#   gini (0-1 fraction — multiply by 100 to compare to WDI SI.POV.GINI), survey_*.
+# Docs: https://pip.worldbank.org/  (API under Resources)
+# ---------------------------------------------------------------------------
+
+_PIP_FIELDS = [
+    "country_code", "country_name", "region_code", "reporting_year",
+    "reporting_level", "welfare_type", "gini", "mean", "median",
+    "survey_acronym", "survey_year", "survey_comparability", "comparable_spell",
+]
+
+
+def ingest_pip(
+    cfg: dict,
+    reporting_level: str = "national",
+    skip_existing: bool = True,
+    timeout: int = 180,
+) -> pd.DataFrame:
+    """Fetch the World Bank PIP inequality table (all countries, all years).
+
+    Returns one row per country x survey year carrying the ``welfare_type``
+    (income vs consumption) flag alongside the PIP ``gini`` (0-1 fraction). Saved
+    raw to ``data/raw/pip_inequality.parquet``.
+
+    Args:
+        cfg:             Loaded config dict.
+        reporting_level: PIP reporting level ("national" | "urban" | "rural" | "all").
+        skip_existing:   If True and the raw parquet exists, read it instead of refetching.
+        timeout:         Request timeout in seconds (the full pull is a few MB).
+
+    Returns:
+        DataFrame trimmed to the columns in _PIP_FIELDS (with gini_pct = gini * 100 added).
+    """
+    dest = raw_path(cfg, "pip_inequality.parquet")
+
+    if skip_existing and dest.exists():
+        print("  PIP inequality: skip (exists)")
+        return pd.read_parquet(dest)
+
+    src = cfg["sources"].get("pip", {})
+    base_url = src.get("base_url", "https://api.worldbank.org/pip/v1/pip")
+    rate_limit = cfg["settings"].get("rate_limit_seconds", 1.5)
+
+    print("  Downloading World Bank PIP inequality (all countries/years)...")
+    time.sleep(rate_limit)
+    resp = requests.get(
+        base_url,
+        params={
+            "country": "all",
+            "year": "all",
+            "reporting_level": reporting_level,
+            "format": "json",
+            "fill_gaps": "false",
+        },
+        timeout=timeout,
+    )
+    resp.raise_for_status()
+    df = pd.DataFrame(resp.json())
+
+    # keep only the fields we use (defensive: some may be absent in an edition)
+    keep = [c for c in _PIP_FIELDS if c in df.columns]
+    df = df[keep].copy()
+
+    # PIP gini is a 0-1 fraction; WDI SI.POV.GINI is 0-100. Add a comparable column.
+    if "gini" in df.columns:
+        df["gini_pct"] = (df["gini"] * 100).round(2)
+
+    df.to_parquet(dest, index=False)
+    print(f"  → {len(df):,} rows, {df['country_code'].nunique()} countries")
     return df
 
 
@@ -485,9 +584,9 @@ def ingest_iso_countries(cfg: dict, skip_existing: bool = True) -> pd.DataFrame:
 # ---------------------------------------------------------------------------
 
 def ingest_all(cfg: dict, skip_existing: bool = True) -> dict[str, pd.DataFrame]:
-    """Run full countries ingest: ISO codes + all World Bank indicators.
+    """Run full countries ingest: ISO codes + World Bank indicators + PIP welfare metric.
 
-    Returns dict with 'iso_countries' and 'indicators' DataFrames.
+    Returns dict with 'iso_countries', 'indicators', and 'pip' DataFrames.
     """
     print("=" * 60)
     print("  COUNTRIES INCOME DISPARITY — FULL INGEST")
@@ -504,7 +603,13 @@ def ingest_all(cfg: dict, skip_existing: bool = True) -> dict[str, pd.DataFrame]
     df_indicators = ingest_world_bank_all(cfg, skip_existing=skip_existing)
     print()
 
+    # 3. PIP welfare-metric flag (income vs consumption Gini)
+    print("--- World Bank PIP (welfare metric) ---")
+    df_pip = ingest_pip(cfg, skip_existing=skip_existing)
+    print()
+
     return {
         "iso_countries": df_iso,
         "indicators": df_indicators,
+        "pip": df_pip,
     }

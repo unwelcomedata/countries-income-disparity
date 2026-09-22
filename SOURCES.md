@@ -90,6 +90,34 @@ apples-to-oranges comparisons.
   countries" boundary is a definitional choice that affects any regional aggregation.
 - **Retrieved:** 2026-08-27
 
+### World Bank — Poverty and Inequality Platform (PIP)
+- **Publisher:** The World Bank (Poverty and Inequality Platform)
+- **URL:** https://api.worldbank.org/pip/v1/pip (PIP API; `country=all&year=all&reporting_level=national&format=json`)
+- **Format:** JSON (API), loaded as `pip_inequality`
+- **License:** CC-BY 4.0
+- **Fields used:** country_code (ISO alpha-3), country_name, reporting_year, reporting_level,
+  **welfare_type** (income | consumption), gini (0–1 fraction), gini_pct (×100), mean, median,
+  survey_acronym, survey_year, survey_comparability, comparable_spell
+- **Coverage:** ~2,500 national survey rows across ~170 countries; earliest surveys 1960s → 2024
+- **How the source collects the data:** PIP estimates are computed **directly from national
+  household surveys** (income and expenditure / budget surveys), harmonized by the World Bank.
+  Each country's survey runs on its own schedule and design.
+- **How the source defines the data:** `welfare_type` records whether that survey's welfare
+  aggregate is **income** or **consumption** — the flag WDI's `SI.POV.GINI` does not expose.
+  `gini` is the Gini of that aggregate as a **0–1 fraction** (multiply by 100 to compare to the
+  WDI 0–100 Gini). Rows are per survey year (not annual).
+- **Methodology changes / series breaks:** This source EXISTS to resolve the biggest break —
+  **income vs consumption Gini are not directly comparable** (income ~4.7 pts higher on average).
+  `survey_comparability` / `comparable_spell` flag within-country breaks across survey vintages.
+  PPP rebasing (2017→2021 ICP) and periodic PIP revisions shift values across editions.
+- **Known controversies / debates:** Same cross-country apples-to-oranges debate as the WDI Gini;
+  PIP is the source that lets us label the metric rather than hide it. Top-income undercoverage in
+  surveys remains a debated downward bias.
+- **Notes:** PIP `gini` × 100 should closely match WDI `SI.POV.GINI` for the same country/survey
+  year (both derive from PIP), but they are not guaranteed identical (interpolation, edition).
+  We use PIP for the **welfare_type flag**; WDI remains the headline Gini series.
+- **Retrieved:** 2026-09-22
+
 ### Indicator Code Reference
 - **Publisher:** Internal (derived from World Bank indicator metadata)
 - **Format:** Internal table (`indicator_catalog`)

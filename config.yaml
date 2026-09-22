@@ -76,6 +76,26 @@ sources:
       territories. Primary key: alpha-3 code.
 
   # -------------------------------------------------------------------------
+  # World Bank Poverty & Inequality Platform (PIP) — welfare-metric flag
+  # WDI's SI.POV.GINI doesn't say whether a Gini is income- or consumption-based;
+  # PIP (the underlying survey source) does, via `welfare_type`. Pulled to attach
+  # the metric type to each Gini observation so cross-country rankings can label
+  # by method (the income-vs-consumption comparability hazard in SOURCES.md).
+  # Base: https://api.worldbank.org/pip/v1/pip  (free, no key)
+  #   country=all&year=all&reporting_level=national&format=json
+  # gini is a 0-1 fraction (x100 to compare to WDI SI.POV.GINI). Codes are ISO alpha-3.
+  # License: CC-BY 4.0
+  # -------------------------------------------------------------------------
+  pip:
+    base_url: "https://api.worldbank.org/pip/v1/pip"
+    type: api_json
+    reporting_level: national
+    notes: >
+      One row per country x survey year with welfare_type (income|consumption),
+      gini (0-1), survey metadata. ISO alpha-3 country_code. ~2,500 national
+      survey rows across ~170 countries.
+
+  # -------------------------------------------------------------------------
   # UNDP Human Development Index (supplemental, future phase)
   # -------------------------------------------------------------------------
   # undp_hdi:
