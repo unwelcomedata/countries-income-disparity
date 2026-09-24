@@ -84,10 +84,14 @@ def _write_html(options: list[str], default_iso: str) -> None:
   .chart img {{ width: 100%; height: auto; border: 1px solid #eee; border-radius: 6px; }}
   .note {{ color: #77818b; font-size: 13px; margin-top: 14px; line-height: 1.5; }}
   a {{ color: #005F73; }}
+  .backlink {{ display: inline-block; margin: 0 0 14px; font-size: 14px;
+               font-weight: 600; text-decoration: none; }}
+  .backlink:hover {{ text-decoration: underline; }}
 </style>
 </head>
 <body>
 <div class="wrap">
+  <a class="backlink" href="../">&larr; Back to How Countries Compare</a>
   <h1>Country profiles — income &amp; inequality over time</h1>
   <p class="lead">
     Pick a country to see six metrics over time: life expectancy, GDP per capita (PPP),
@@ -111,7 +115,7 @@ def _write_html(options: list[str], default_iso: str) -> None:
     “(no data).” A small number of series with demographically implausible source values
     are suppressed and labeled as such (e.g. Central African Republic life expectancy, a
     World Bank modeling artifact). Data ties back to the World Bank source in every case.
-    &middot; <a href="../">Back to the project</a>
+    &middot; <a href="../">&larr; Back to How Countries Compare</a>
   </p>
 </div>
 <script>
