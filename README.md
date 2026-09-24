@@ -95,7 +95,8 @@ The full dataset is in [`export/`](export/):
 
 ## Reproduce it
 
-The pipeline is reproducible from the source APIs:
+The pipeline is reproducible from the source APIs. The ingest → clean → export logic lives in
+[`src/`](src/) (`ingest.py`, `clean_quality.py`, `prepare.py`), driven by `config.yaml`:
 
 ```bash
 pip install -r requirements.txt
@@ -103,9 +104,9 @@ python scripts/reproduce.py        # fetch World Bank WDI + PIP → clean → ex
 python scripts/validate_charts.py  # re-checks every chart's facts against the data
 ```
 
-`reproduce.py` runs the pipeline notebooks (`notebooks/01-ingest` → `03-prepare`) in order; the chart
-logic lives in `04-viz` (exploration) and `06-viz-social` (publication). See
-[`scripts/README.md`](scripts/README.md) for details.
+`reproduce.py` is standalone — it runs the `src/` pipeline directly (no notebooks needed) and its
+output is byte-for-byte identical to the published exports. See
+[`scripts/README.md`](scripts/README.md) for the stage-by-stage details.
 
 ## Sources & license
 
