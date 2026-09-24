@@ -34,8 +34,8 @@ Stages (all inside `reproduce.py`, calling `src/`):
 | Clean | Build `countries_clean` (drop WB aggregates via ISO join, patch Namibia/Kosovo, attach region + per-country Gini welfare type) | DuckDB `countries_clean` |
 | Prepare | Build panel + latest snapshot; package `countries_panel_v1` + `countries_latest_v1` (CSV/xlsx/parquet + codebook) | `export/*` |
 
-Charts are rendered by `notebooks/04-viz` (exploration) and `06-viz-social`
-(publication social + web), using the shared Pillow chart factory.
+Charts are rendered from the same cleaned data using the shared Pillow chart factory
+(the exploration and publication chart steps live in the project's source repo).
 
 ## Pre-publish validation gate (serious tier — required before release)
 
@@ -57,8 +57,9 @@ python scripts/validate_charts.py
 
 ## Conventions
 
-- **The notebooks are the pipeline.** Scripts orchestrate or validate them; they do
-  not re-implement pipeline logic (that would drift from the canonical record).
+- **Pipeline logic lives in `src/`.** Both `reproduce.py` and the project's notebooks
+  call the same `src/` functions, so the reproducible entrypoint and the working record
+  can't drift (verified: `reproduce.py` output is byte-identical to the published exports).
 - **Only the current export version lives in `export/`.** Tag old versions in git.
 - **`build_country_pages.py` reuses `build_country_dashboards.py`** so the published
   dashboards inherit the exact review-stage logic (incl. the CAF suppression).
