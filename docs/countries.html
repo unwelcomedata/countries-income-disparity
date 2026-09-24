@@ -20,6 +20,11 @@
   .backlink { display: inline-block; margin: 0 0 14px; font-size: 14px;
                font-weight: 600; text-decoration: none; }
   .backlink:hover { text-decoration: underline; }
+  .backhome-wrap { text-align: center; margin: 32px 0 8px; }
+  .backhome { display: inline-block; padding: 14px 28px; font-size: 18px;
+               font-weight: 700; color: #fff; background: #005F73;
+               border-radius: 8px; text-decoration: none; }
+  .backhome:hover { background: #00485a; }
 </style>
 </head>
 <body>
@@ -263,8 +268,10 @@
     “(no data).” A small number of series with demographically implausible source values
     are suppressed and labeled as such (e.g. Central African Republic life expectancy, a
     World Bank modeling artifact). Data ties back to the World Bank source in every case.
-    &middot; <a href="../">&larr; Back to How Countries Compare</a>
   </p>
+  <div class="backhome-wrap">
+    <a class="backhome" href="../">&larr; Back to How Countries Compare</a>
+  </div>
 </div>
 <script>
   function swap() {
