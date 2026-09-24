@@ -1,0 +1,217 @@
+iso_alpha2,iso_alpha3,country_name,region,sub_region,gini_index,gini_year,gini_welfare_type,population,gdp_per_capita_ppp,gdp_per_capita_nominal,gdp_growth_pct,poverty_215_pct,poverty_365_pct,life_expectancy,fertility_rate,urban_pct,unemployment_pct,inflation_pct,trade_pct_gdp,internet_pct
+AF,AFG,Afghanistan,Asia,Southern Asia,,,,43844111.0,2236.0,417.0,1.87,,,66.3,4.76,25.9,13.35,-6.6,83.8,16.1
+AL,ALB,Albania,Europe,Southern Europe,29.4,2020.0,consumption,2349580.0,28221.0,12998.0,3.79,0.3,2.1,79.8,1.34,58.9,10.93,2.15,79.5,85.9
+DZ,DZA,Algeria,Africa,Northern Africa,27.6,2011.0,consumption,47435312.0,18586.0,6051.0,3.82,0.0,4.7,76.5,2.72,75.8,11.63,1.42,39.0,77.4
+AS,ASM,American Samoa,Oceania,Polynesia,,,,46029.0,,18017.0,1.74,,,73.0,2.27,80.5,,,124.7,0.0
+AD,AND,Andorra,Europe,Southern Europe,,,,82904.0,79567.0,54292.0,3.87,,,84.2,1.09,88.9,,,,94.4
+AO,AGO,Angola,Africa,Sub-Saharan Africa,51.3,2018.0,consumption,39040039.0,10251.0,3129.0,3.13,39.3,53.7,64.8,5.05,71.5,14.11,20.16,34.6,40.7
+AG,ATG,Antigua and Barbuda,Americas,Latin America and the Caribbean,,,,94209.0,35832.0,24819.0,5.0,,,77.8,1.58,24.3,,1.37,118.3,72.7
+AR,ARG,Argentina,Americas,Latin America and the Caribbean,42.4,2024.0,,45851378.0,32587.0,14898.0,4.37,1.0,2.8,77.5,1.5,92.4,7.14,219.88,30.4,89.7
+AM,ARM,Armenia,Asia,Western Asia,27.4,2024.0,consumption,3086700.0,24754.0,9474.0,7.2,0.8,5.7,78.3,1.7,65.9,12.87,3.31,101.7,81.3
+AW,ABW,Aruba,Americas,Latin America and the Caribbean,,,,108785.0,51712.0,38591.0,6.81,,,76.5,1.61,61.7,,4.26,164.1,97.2
+AU,AUS,Australia,Oceania,Australia and New Zealand,33.8,2020.0,income,27614411.0,71934.0,65130.0,1.35,0.9,1.1,83.1,1.48,87.7,4.09,2.87,45.9,96.1
+AT,AUT,Austria,Europe,Western Europe,31.2,2023.0,income,9208163.0,76778.0,62930.0,0.62,0.5,0.6,82.0,1.31,69.7,5.58,3.53,107.0,91.9
+AZ,AZE,Azerbaijan,Asia,Western Asia,26.6,2005.0,consumption,10246996.0,26113.0,7411.0,1.45,0.0,0.3,74.6,1.43,58.6,5.46,5.62,79.8,90.8
+BS,BHS,"Bahamas, The",Americas,Latin America and the Caribbean,,,,403033.0,41258.0,39455.0,3.38,,,74.7,1.37,81.3,9.21,0.41,79.2,92.5
+BH,BHR,Bahrain,Asia,Western Asia,,,,1600366.0,70997.0,30597.0,3.48,,,81.4,1.8,100.0,1.1,-0.14,157.5,100.0
+BD,BGD,Bangladesh,Asia,Southern Asia,30.9,2022.0,consumption,175686899.0,10154.0,2597.0,3.49,5.9,20.5,74.9,2.14,33.2,3.78,8.77,28.0,53.4
+BB,BRB,Barbados,Americas,Latin America and the Caribbean,34.1,2016.0,consumption,282623.0,25894.0,28365.0,2.7,1.7,3.2,76.3,1.71,59.7,6.52,0.85,,70.4
+BY,BLR,Belarus,Europe,Eastern Europe,24.4,2020.0,consumption,9085991.0,34716.0,10279.0,1.3,0.0,0.1,74.4,1.22,79.5,3.38,6.6,112.1,94.3
+BE,BEL,Belgium,Europe,Western Europe,26.8,2023.0,income,11941781.0,74676.0,60750.0,0.98,0.1,0.1,82.3,1.44,87.7,5.91,2.47,152.9,95.8
+BZ,BLZ,Belize,Americas,Latin America and the Caribbean,39.9,2018.0,consumption,422924.0,14966.0,7865.0,2.75,1.0,4.0,73.7,2.02,41.6,8.86,1.06,109.0,80.0
+BJ,BEN,Benin,Africa,Sub-Saharan Africa,34.4,2021.0,consumption,14814460.0,4817.0,1658.0,8.07,27.2,50.0,61.0,4.48,53.4,1.59,1.1,37.1,34.0
+BM,BMU,Bermuda,Americas,Northern America,,,,64555.0,118728.0,142250.0,1.89,,,82.5,1.4,100.0,,,80.2,98.4
+BT,BTN,Bhutan,Asia,Southern Asia,28.5,2022.0,consumption,796682.0,19594.0,4493.0,8.01,0.0,0.4,73.3,1.45,43.4,3.23,3.56,79.4,91.3
+BO,BOL,Bolivia,Americas,Latin America and the Caribbean,40.9,2024.0,income,12581843.0,12873.0,5148.0,-1.58,2.1,4.9,68.7,2.52,71.6,2.97,19.52,47.0,79.7
+BA,BIH,Bosnia and Herzegovina,Europe,Southern Europe,30.3,2021.0,consumption,3140095.0,25814.0,10382.0,2.13,0.3,1.0,78.0,1.49,52.7,11.04,6.11,95.1,86.1
+BW,BWA,Botswana,Africa,Sub-Saharan Africa,54.9,2015.0,consumption,2562122.0,20698.0,7778.0,-0.73,21.4,35.8,69.3,2.7,68.0,24.48,2.66,69.5,57.5
+BR,BRA,Brazil,Americas,Latin America and the Caribbean,50.3,2024.0,income,212812405.0,23433.0,10713.0,2.29,3.0,6.2,76.0,1.61,88.2,5.97,5.02,35.3,84.5
+VG,VGB,British Virgin Islands,Americas,Latin America and the Caribbean,,,,39732.0,,,,,,77.4,1.05,57.4,,,,77.7
+BN,BRN,Brunei Darussalam,Asia,South-eastern Asia,,,,466330.0,92430.0,32235.0,0.67,,,75.5,1.73,75.0,5.28,-0.3,123.6,96.3
+BG,BGR,Bulgaria,Europe,Eastern Europe,39.5,2023.0,income,6433302.0,44451.0,20328.0,3.1,1.0,1.6,75.8,1.72,74.2,3.54,4.58,102.5,82.4
+BF,BFA,Burkina Faso,Africa,Sub-Saharan Africa,37.4,2021.0,consumption,24074580.0,3072.0,1148.0,5.29,42.1,64.6,61.3,4.11,28.9,3.48,-0.59,65.0,28.3
+BI,BDI,Burundi,Africa,Sub-Saharan Africa,37.5,2020.0,consumption,14390003.0,1248.0,234.0,4.24,74.2,87.2,63.8,4.79,25.7,0.92,34.13,,8.6
+CV,CPV,Cabo Verde,Africa,Sub-Saharan Africa,42.4,2015.0,consumption,527326.0,12165.0,5796.0,6.3,14.6,29.7,76.2,1.51,77.6,11.94,2.34,95.3,74.7
+KH,KHM,Cambodia,Asia,South-eastern Asia,,,,17847982.0,8543.0,2872.0,5.35,,,70.8,2.55,41.1,0.26,2.35,136.1,68.5
+CM,CMR,Cameroon,Africa,Sub-Saharan Africa,42.2,2021.0,consumption,29879337.0,5788.0,1972.0,3.2,26.7,41.3,64.0,4.26,55.7,3.6,3.4,33.4,46.3
+CA,CAN,Canada,Americas,Northern America,31.5,2022.0,income,41651653.0,66746.0,55698.0,1.74,0.3,0.3,82.1,1.25,82.9,6.91,2.07,63.5,94.4
+KY,CYM,Cayman Islands,Americas,Latin America and the Caribbean,,,,75844.0,92201.0,104293.0,3.76,,,80.5,1.52,100.0,,-0.63,105.5,81.1
+CF,CAF,Central African Republic,Africa,Sub-Saharan Africa,43.0,2021.0,consumption,5513282.0,1314.0,556.0,4.5,71.6,83.9,57.7,5.95,44.6,6.25,1.0,52.9,13.8
+TD,TCD,Chad,Africa,Sub-Saharan Africa,37.4,2022.0,consumption,21003705.0,2903.0,1022.0,5.59,39.5,61.4,55.2,6.03,27.6,1.06,-3.91,46.1,12.6
+CL,CHL,Chile,Americas,Latin America and the Caribbean,43.0,2024.0,income,19859921.0,37774.0,17995.0,2.46,0.4,0.7,81.4,1.14,89.2,8.97,4.21,65.0,95.6
+CN,CHN,China,Asia,Eastern Asia,36.0,2022.0,consumption,1406585000.0,29333.0,13862.0,4.96,0.0,0.5,78.0,1.01,66.3,4.62,0.06,38.0,91.6
+CO,COL,Colombia,Americas,Latin America and the Caribbean,54.4,2024.0,income,53425635.0,22640.0,8562.0,2.64,8.5,14.7,77.9,1.63,78.8,8.29,5.14,35.4,79.3
+KM,COM,Comoros,Africa,Sub-Saharan Africa,30.3,2024.0,consumption,882847.0,4238.0,2056.0,3.75,5.1,18.0,67.0,3.82,33.9,3.82,3.25,40.9,32.5
+CD,COD,"Congo, Dem. Rep.",Africa,Sub-Saharan Africa,44.7,2020.0,consumption,112832473.0,1920.0,807.0,5.76,85.3,92.5,62.1,5.98,45.1,4.43,2.89,87.3,19.7
+CG,COG,"Congo, Rep.",Africa,Sub-Saharan Africa,48.9,2011.0,consumption,6484437.0,7248.0,2515.0,3.08,39.2,55.0,66.0,4.11,64.1,19.88,2.4,91.7,47.3
+CR,CRI,Costa Rica,Americas,Latin America and the Caribbean,45.5,2025.0,income,5152950.0,33815.0,19970.0,4.56,0.8,1.7,81.0,1.32,79.7,6.84,-0.07,71.5,87.2
+CI,CIV,Cote d'Ivoire,Africa,Sub-Saharan Africa,35.3,2021.0,consumption,32711547.0,8209.0,3050.0,6.5,20.8,41.6,62.1,4.23,54.5,2.32,0.13,54.6,41.4
+HR,HRV,Croatia,Europe,Southern Europe,30.1,2023.0,income,3876200.0,50946.0,27104.0,3.4,0.3,0.6,78.9,1.46,57.8,5.0,3.69,101.0,83.6
+CU,CUB,Cuba,Americas,Latin America and the Caribbean,,,,10937203.0,,9605.0,-1.06,,,78.3,1.44,77.2,1.75,,124.9,70.5
+CW,CUW,Curacao,Americas,Latin America and the Caribbean,,,,156263.0,32741.0,22833.0,5.03,,,77.0,1.4,91.5,,2.62,155.3,68.1
+CY,CYP,Cyprus,Asia,Western Asia,31.8,2023.0,income,1370754.0,64575.0,41783.0,3.77,0.0,0.0,81.8,1.38,66.7,4.92,0.13,189.5,89.6
+CZ,CZE,Czechia,Europe,Eastern Europe,25.7,2023.0,income,10886878.0,60487.0,35917.0,2.58,0.0,0.0,80.0,1.36,72.9,2.82,2.46,128.0,87.7
+DK,DNK,Denmark,Europe,Northern Europe,29.9,2023.0,income,6009169.0,83218.0,76970.0,2.93,0.4,0.4,82.3,1.47,88.8,5.53,1.89,129.2,99.8
+DJ,DJI,Djibouti,Africa,Sub-Saharan Africa,41.6,2017.0,consumption,1184076.0,8452.0,3906.0,6.5,25.4,43.7,66.2,2.62,73.0,26.02,-0.31,206.3,65.3
+DM,DMA,Dominica,Americas,Latin America and the Caribbean,,,,65871.0,22713.0,10989.0,3.05,,,71.3,1.48,74.0,,2.53,,82.0
+DO,DOM,Dominican Republic,Americas,Latin America and the Caribbean,39.0,2024.0,income,11520487.0,28721.0,11059.0,2.12,0.8,2.0,73.9,2.22,72.5,5.09,3.87,51.5,91.0
+EC,ECU,Ecuador,Americas,Latin America and the Caribbean,45.9,2025.0,income,18289896.0,16757.0,7125.0,3.73,3.4,8.4,77.6,1.81,63.4,3.31,0.71,59.4,77.2
+EG,EGY,"Egypt, Arab Rep.",Africa,Northern Africa,28.5,2021.0,consumption,118365995.0,20204.0,3086.0,4.39,1.4,7.1,71.8,2.74,42.9,6.78,14.07,51.3,74.6
+SV,SLV,El Salvador,Americas,Latin America and the Caribbean,39.8,2023.0,income,6365503.0,14101.0,5767.0,3.91,4.6,8.6,72.3,1.77,75.5,3.3,0.26,88.2,66.5
+GQ,GNQ,Equatorial Guinea,Africa,Sub-Saharan Africa,38.5,2022.0,consumption,1938431.0,16133.0,6615.0,-5.85,8.8,21.5,63.9,4.12,71.6,8.34,2.92,74.9,63.3
+ER,ERI,Eritrea,Africa,Sub-Saharan Africa,,,,3607003.0,1742.0,689.0,8.68,,,68.9,3.68,34.5,5.98,,47.4,14.3
+EE,EST,Estonia,Europe,Northern Europe,30.7,2023.0,income,1366475.0,52106.0,34418.0,0.58,0.3,0.6,79.3,1.18,70.7,8.31,4.83,155.8,92.2
+SZ,SWZ,Eswatini,Africa,Sub-Saharan Africa,54.6,2016.0,consumption,1256174.0,12529.0,4108.0,4.19,44.5,58.3,64.3,2.72,26.7,34.2,2.6,107.5,63.4
+ET,ETH,Ethiopia,Africa,Sub-Saharan Africa,31.1,2021.0,consumption,135472051.0,3622.0,933.0,9.77,38.6,63.7,67.6,3.91,24.1,3.32,13.23,33.5,21.9
+FO,FRO,Faroe Islands,Europe,Northern Europe,,,,54900.0,82089.0,74175.0,0.84,,,83.1,1.91,39.6,,,105.8,97.6
+FJ,FJI,Fiji,Oceania,Melanesia,30.7,2019.0,consumption,933154.0,16338.0,6642.0,3.2,4.7,15.1,67.5,2.27,59.5,5.35,-1.38,119.0,74.7
+FI,FIN,Finland,Europe,Northern Europe,27.4,2023.0,income,5646436.0,65884.0,56149.0,0.17,0.2,0.2,82.3,1.25,74.5,9.46,0.34,83.4,93.7
+FR,FRA,France,Europe,Western Europe,31.8,2023.0,income,68720337.0,63975.0,48986.0,0.84,0.1,0.1,83.0,1.61,78.8,7.54,0.94,67.2,88.7
+PF,PYF,French Polynesia,Oceania,Polynesia,,,,282465.0,,22440.0,1.13,,,84.2,1.49,61.8,11.66,,64.5,72.7
+GA,GAB,Gabon,Africa,Sub-Saharan Africa,38.0,2017.0,consumption,2593130.0,22218.0,8263.0,2.47,3.8,8.0,68.5,3.59,92.1,20.15,1.77,84.9,68.7
+GM,GMB,"Gambia, The",Africa,Sub-Saharan Africa,38.8,2020.0,consumption,2822093.0,3706.0,919.0,5.89,22.0,40.2,66.1,3.91,65.0,6.52,11.56,62.2,49.5
+GE,GEO,Georgia,Asia,Western Asia,33.9,2024.0,consumption,3935766.0,29414.0,9692.0,7.46,4.2,11.0,74.7,1.8,61.2,12.1,3.87,100.6,83.8
+DE,DEU,Germany,Europe,Western Europe,33.7,2022.0,income,83491249.0,75407.0,60496.0,0.24,0.7,0.9,80.8,1.36,82.1,3.71,2.17,78.5,93.5
+GH,GHA,Ghana,Africa,Sub-Saharan Africa,43.5,2016.0,consumption,35064272.0,8610.0,3257.0,5.95,39.0,56.3,65.7,3.34,58.9,2.98,14.2,69.0,72.2
+GI,GIB,Gibraltar,Europe,Southern Europe,,,,40126.0,,,,,,83.6,1.88,100.0,,,,94.4
+GR,GRC,Greece,Europe,Southern Europe,33.4,2023.0,income,10413962.0,45264.0,26948.0,2.07,0.6,0.8,81.8,1.24,79.2,8.54,2.48,83.5,86.3
+GL,GRL,Greenland,Americas,Northern America,,,,56831.0,78906.0,58499.0,0.87,,,70.3,1.71,88.6,,,91.9,69.5
+GD,GRD,Grenada,Americas,Latin America and the Caribbean,43.8,2018.0,consumption,117303.0,21346.0,12107.0,4.41,0.8,2.9,75.4,1.47,36.7,,0.61,,70.2
+GU,GUM,Guam,Oceania,Micronesia,,,,168999.0,,41833.0,5.1,,,77.4,2.75,94.2,5.57,,71.9,80.5
+GT,GTM,Guatemala,Americas,Latin America and the Caribbean,45.2,2023.0,income,18687881.0,15197.0,6598.0,4.28,9.7,17.6,72.7,2.29,56.3,2.6,1.49,46.5,60.2
+GN,GIN,Guinea,Africa,Sub-Saharan Africa,29.6,2018.0,consumption,15099727.0,4935.0,1877.0,7.45,11.7,29.2,60.9,4.13,38.5,5.16,3.55,103.7,33.3
+GW,GNB,Guinea-Bissau,Africa,Sub-Saharan Africa,33.4,2021.0,consumption,2249515.0,3293.0,1124.0,5.82,39.9,62.1,64.3,3.76,46.7,2.67,0.87,40.9,29.8
+GY,GUY,Guyana,Americas,Latin America and the Caribbean,45.1,1998.0,income,835986.0,97899.0,32414.0,19.34,13.0,21.5,70.3,2.4,26.5,11.96,3.33,194.4,83.0
+HT,HTI,Haiti,Americas,Latin America and the Caribbean,41.1,2012.0,consumption,11906095.0,3134.0,2694.0,-2.71,40.4,59.2,65.1,2.62,55.6,14.94,28.64,15.9,47.9
+HN,HND,Honduras,Americas,Latin America and the Caribbean,45.7,2024.0,income,11005850.0,7871.0,3598.0,3.75,15.7,23.5,73.0,2.48,59.3,4.92,4.6,91.5,58.6
+HK,HKG,"Hong Kong SAR, China",Asia,Eastern Asia,,,,7498900.0,80423.0,56983.0,3.49,,,85.4,0.84,100.0,2.8,1.44,396.6,95.8
+HU,HUN,Hungary,Europe,Eastern Europe,30.6,2017.0,income,9514251.0,49838.0,25907.0,0.51,0.9,1.8,76.7,1.41,70.7,4.52,4.41,140.8,93.8
+IS,ISL,Iceland,Europe,Northern Europe,26.8,2019.0,income,392404.0,83431.0,98323.0,1.28,0.1,0.1,82.8,1.56,94.2,3.62,4.09,82.5,98.2
+IN,IND,India,Asia,Southern Asia,25.5,2022.0,consumption,1463865525.0,11748.0,2702.0,7.57,5.3,23.9,72.2,1.96,35.7,4.22,2.4,46.3,70.0
+ID,IDN,Indonesia,Asia,South-eastern Asia,34.4,2025.0,consumption,285721236.0,17660.0,5060.0,5.11,4.0,16.4,71.3,2.12,59.4,3.24,1.91,43.4,72.8
+IR,IRN,"Iran, Islamic Rep.",Asia,Southern Asia,35.9,2023.0,consumption,92417681.0,19699.0,3924.0,-2.83,2.5,7.5,77.9,1.68,77.4,8.3,42.17,60.2,85.3
+IQ,IRQ,Iraq,Asia,Western Asia,29.8,2023.0,consumption,47020774.0,14267.0,5410.0,-2.16,0.5,2.4,72.4,3.22,69.9,15.48,0.3,77.1,81.5
+IE,IRL,Ireland,Europe,Northern Europe,29.0,2023.0,income,5484367.0,155089.0,131592.0,12.34,0.1,0.1,83.0,1.47,64.6,4.63,2.21,240.0,97.2
+IM,IMN,Isle of Man,Europe,Northern Europe,,,,84118.0,,90015.0,-2.04,,,81.1,1.54,52.1,,,,
+IL,ISR,Israel,Asia,Western Asia,38.3,2022.0,income,10122800.0,59717.0,60337.0,2.93,0.4,0.9,83.2,2.87,91.6,3.49,3.04,53.0,88.2
+IT,ITA,Italy,Europe,Southern Europe,34.3,2023.0,income,58915656.0,62803.0,43309.0,0.54,0.9,1.0,84.0,1.18,69.7,6.39,1.53,62.5,89.2
+JM,JAM,Jamaica,Americas,Latin America and the Caribbean,39.9,2021.0,consumption,2837077.0,13291.0,8003.0,0.08,1.4,5.1,71.6,1.35,59.4,3.29,4.0,,90.1
+JP,JPN,Japan,Asia,Eastern Asia,32.3,2020.0,income,123366734.0,55422.0,35951.0,1.19,1.2,1.6,84.0,1.15,92.3,2.45,3.17,44.9,85.5
+JO,JOR,Jordan,Asia,Western Asia,33.7,2010.0,consumption,11520684.0,12632.0,5348.0,2.83,0.1,0.9,78.0,2.6,93.2,16.54,1.77,146.0,95.6
+KZ,KAZ,Kazakhstan,Asia,Central Asia,29.2,2021.0,consumption,20843754.0,44293.0,14692.0,6.5,0.0,0.3,74.5,2.98,62.4,4.77,11.39,57.2,93.4
+KE,KEN,Kenya,Africa,Sub-Saharan Africa,38.5,2022.0,consumption,57532493.0,7016.0,2363.0,4.63,45.5,65.5,63.8,3.17,32.2,5.45,4.07,37.5,35.0
+KI,KIR,Kiribati,Oceania,Micronesia,24.7,2023.0,consumption,136488.0,3937.0,2559.0,4.22,0.9,5.7,66.6,3.12,63.4,,2.46,102.1,89.4
+KP,PRK,"Korea, Dem. People's Rep.",Asia,Eastern Asia,,,,26571036.0,,,,,,73.7,1.78,64.2,3.54,,,0.0
+KR,KOR,"Korea, Rep.",Asia,Eastern Asia,32.9,2021.0,income,51684564.0,63125.0,36227.0,1.01,0.1,0.2,83.6,0.75,81.2,2.68,2.12,86.4,97.9
+XK,XKX,Kosovo,Europe,Southern Europe,38.3,2022.0,income,1576876.0,19263.0,7899.0,3.59,10.0,14.9,78.2,1.54,50.9,,3.86,118.2,89.4
+KW,KWT,Kuwait,Asia,Western Asia,,,,4865298.0,56468.0,32312.0,2.73,,,84.6,1.56,100.0,2.18,2.36,94.0,100.0
+KG,KGZ,Kyrgyz Republic,Asia,Central Asia,27.5,2024.0,consumption,7343064.0,9220.0,3081.0,11.1,2.2,12.5,72.4,2.6,34.7,3.53,8.21,92.4,92.0
+LA,LAO,Lao PDR,Asia,South-eastern Asia,34.7,2024.0,consumption,7873046.0,10383.0,2325.0,4.54,7.1,22.5,69.2,2.4,40.3,1.19,7.74,75.1,65.6
+LV,LVA,Latvia,Europe,Northern Europe,34.0,2023.0,income,1847785.0,46137.0,26312.0,2.14,0.4,0.7,76.4,1.24,68.6,6.57,3.75,129.7,92.7
+LB,LBN,Lebanon,Asia,Western Asia,35.5,2022.0,consumption,5849421.0,11917.0,4473.0,-7.08,5.8,15.7,77.9,2.23,91.0,10.98,14.6,82.2,80.6
+LS,LSO,Lesotho,Africa,Sub-Saharan Africa,44.9,2017.0,consumption,2363325.0,3184.0,1089.0,1.98,41.9,56.8,57.8,2.66,44.7,16.32,4.27,154.0,51.8
+LR,LBR,Liberia,Africa,Sub-Saharan Africa,35.3,2016.0,consumption,5731206.0,1981.0,915.0,5.02,33.6,55.0,62.3,3.86,56.1,2.88,8.32,,32.2
+LY,LBY,Libya,Africa,Northern Africa,,,,7458555.0,16521.0,6449.0,13.37,,,71.1,2.3,87.9,18.76,1.84,137.7,82.0
+LI,LIE,Liechtenstein,Europe,Western Europe,,,,41024.0,,220167.0,-1.16,,,84.2,1.37,14.6,,,,98.3
+LT,LTU,Lithuania,Europe,Northern Europe,36.0,2023.0,income,2888774.0,56838.0,32959.0,2.92,1.1,1.2,77.2,1.11,69.1,6.73,3.79,142.1,89.2
+LU,LUX,Luxembourg,Europe,Western Europe,33.6,2023.0,income,686970.0,156542.0,147252.0,0.64,0.1,0.1,83.2,1.25,94.9,6.34,2.26,349.9,99.1
+MO,MAC,"Macao SAR, China",Asia,Eastern Asia,,,,685900.0,137031.0,75902.0,4.67,,,83.3,0.58,100.0,2.35,0.33,139.1,89.8
+MG,MDG,Madagascar,Africa,Sub-Saharan Africa,36.8,2021.0,consumption,32740678.0,1952.0,599.0,3.0,69.2,83.9,63.8,3.91,32.9,3.04,8.05,54.2,18.7
+MW,MWI,Malawi,Africa,Sub-Saharan Africa,38.5,2019.0,consumption,22216120.0,1899.0,672.0,1.89,75.4,87.3,67.6,3.59,17.6,5.07,28.37,39.4,19.0
+MY,MYS,Malaysia,Asia,South-eastern Asia,40.7,2021.0,income,35977838.0,41498.0,13125.0,5.17,0.0,0.1,76.8,1.54,77.4,3.76,1.38,136.4,98.0
+MV,MDV,Maldives,Asia,Southern Asia,29.3,2019.0,consumption,529676.0,28555.0,14615.0,6.31,0.0,0.0,81.3,1.56,42.5,4.51,4.01,156.5,85.2
+ML,MLI,Mali,Africa,Sub-Saharan Africa,35.7,2021.0,consumption,25198821.0,3503.0,1193.0,5.6,36.1,59.5,60.7,5.51,32.2,2.83,3.28,48.8,36.8
+MT,MLT,Malta,Europe,Southern Europe,31.8,2023.0,income,579704.0,72210.0,47907.0,3.96,0.4,0.9,83.0,1.01,95.7,2.9,2.36,219.0,93.9
+MH,MHL,Marshall Islands,Oceania,Micronesia,35.5,2019.0,consumption,36282.0,8964.0,8489.0,2.28,2.1,6.7,67.1,2.86,79.1,,,115.9,65.9
+MR,MRT,Mauritania,Africa,Sub-Saharan Africa,32.0,2019.0,consumption,5315065.0,7676.0,2198.0,4.03,10.2,26.0,68.7,4.62,61.5,10.32,1.55,94.0,45.8
+MU,MUS,Mauritius,Africa,Sub-Saharan Africa,36.8,2017.0,consumption,1243741.0,33667.0,12991.0,3.15,0.5,2.3,73.8,1.44,39.0,5.64,3.67,139.9,73.3
+MX,MEX,Mexico,Americas,Latin America and the Caribbean,42.6,2024.0,income,131946900.0,25868.0,13889.0,0.56,1.6,4.1,75.3,1.89,80.0,2.67,3.81,79.9,83.1
+FM,FSM,"Micronesia, Fed. Sts.",Oceania,Micronesia,40.1,2013.0,consumption,113683.0,4604.0,4414.0,1.06,26.1,43.8,67.4,2.74,22.5,,5.41,93.1,39.5
+MD,MDA,Moldova,Europe,Eastern Europe,26.8,2023.0,consumption,2360527.0,19996.0,8622.0,2.42,0.1,0.8,71.3,1.73,43.7,1.5,7.76,92.7,77.4
+MC,MCO,Monaco,Europe,Western Europe,,,,38341.0,,288002.0,8.51,,,86.5,2.1,100.0,,,,99.0
+MN,MNG,Mongolia,Asia,Eastern Asia,31.4,2022.0,consumption,3568978.0,20798.0,7108.0,6.84,0.4,2.3,72.4,2.5,71.1,5.23,8.61,130.7,85.1
+ME,MNE,Montenegro,Europe,Southern Europe,34.3,2021.0,income,623129.0,35423.0,14817.0,2.74,2.5,4.0,77.9,1.8,65.6,13.57,3.9,105.8,88.9
+MA,MAR,Morocco,Africa,Northern Africa,39.5,2013.0,consumption,38430770.0,11112.0,4672.0,4.6,3.7,11.6,75.5,2.21,63.1,9.0,0.7,93.1,91.2
+MZ,MOZ,Mozambique,Africa,Sub-Saharan Africa,49.6,2022.0,consumption,35631653.0,1698.0,627.0,-0.52,81.4,89.1,63.8,4.69,37.2,6.63,4.37,97.1,20.5
+MM,MMR,Myanmar,Asia,South-eastern Asia,30.7,2017.0,consumption,54850648.0,6012.0,1489.0,-2.01,10.3,29.1,67.1,2.1,30.6,3.05,8.83,,45.4
+NA,NAM,Namibia,Africa,Sub-Saharan Africa,59.1,2015.0,consumption,3092816.0,11986.0,4876.0,1.73,22.9,35.0,67.5,3.21,50.9,19.29,3.51,108.6,64.9
+NR,NRU,Naoero,Oceania,Micronesia,32.4,2012.0,consumption,12025.0,14200.0,14640.0,2.14,9.7,21.7,62.3,3.29,100.0,,-0.12,165.4,83.0
+NP,NPL,Nepal,Asia,Southern Asia,30.0,2022.0,consumption,29618118.0,6175.0,1536.0,4.43,2.4,9.1,70.6,1.96,67.0,10.46,2.65,42.6,46.3
+NL,NLD,Netherlands,Europe,Western Europe,25.7,2021.0,income,18087633.0,87320.0,73684.0,1.78,0.1,0.1,82.0,1.43,95.9,3.87,3.26,150.1,97.0
+NC,NCL,New Caledonia,Oceania,Melanesia,,,,295333.0,,29213.0,-13.5,,,78.9,1.96,68.2,11.17,0.58,40.4,82.0
+NZ,NZL,New Zealand,Oceania,Australia and New Zealand,,,,5324700.0,57350.0,49591.0,0.46,,,82.0,1.57,84.0,5.08,2.84,50.7,93.5
+NI,NIC,Nicaragua,Americas,Latin America and the Caribbean,46.2,2014.0,income,7007502.0,9284.0,3173.0,4.92,6.6,15.7,75.1,2.21,59.4,5.04,2.08,96.4,61.4
+NE,NER,Niger,Africa,Sub-Saharan Africa,32.9,2021.0,consumption,27917831.0,2177.0,775.0,7.01,60.5,79.7,61.4,5.94,18.4,0.39,-4.45,33.9,15.6
+NG,NGA,Nigeria,Africa,Sub-Saharan Africa,33.9,2022.0,consumption,237527782.0,9532.0,1224.0,4.01,41.8,64.0,54.6,4.38,63.8,3.06,23.01,26.2,41.2
+MK,MKD,North Macedonia,Europe,Southern Europe,33.5,2019.0,income,1820909.0,28029.0,10490.0,3.49,3.9,7.4,76.6,1.4,62.9,12.26,4.07,133.0,93.1
+MP,MNP,Northern Mariana Islands,Oceania,Micronesia,,,,43541.0,,23786.0,16.64,,,78.9,2.32,92.2,,,93.2,0.0
+NO,NOR,Norway,Europe,Northern Europe,26.5,2023.0,income,5610870.0,104044.0,94594.0,1.09,0.2,0.2,83.2,1.45,83.6,4.64,3.06,79.1,99.0
+OM,OMN,Oman,Asia,Western Asia,,,,5494691.0,42295.0,19947.0,2.4,,,80.2,2.51,79.5,3.25,0.97,114.9,95.3
+PK,PAK,Pakistan,Asia,Southern Asia,33.5,2024.0,consumption,255219554.0,6573.0,1596.0,3.7,23.0,47.9,67.8,3.55,39.5,5.42,3.55,27.2,57.3
+PW,PLW,Palau,Oceania,Micronesia,,,,17663.0,23052.0,19532.0,6.29,,,69.4,1.88,79.3,,-0.42,105.8,83.9
+PA,PAN,Panama,Americas,Latin America and the Caribbean,49.7,2024.0,income,4571189.0,43902.0,19790.0,4.35,3.1,6.8,79.8,2.11,66.2,8.36,-0.19,83.7,72.8
+PG,PNG,Papua New Guinea,Oceania,Melanesia,41.9,2009.0,consumption,10762817.0,5215.0,3020.0,5.64,52.2,69.4,66.3,3.07,15.8,2.57,4.42,131.1,18.8
+PY,PRY,Paraguay,Americas,Latin America and the Caribbean,44.2,2024.0,income,7013078.0,20181.0,7027.0,6.64,2.1,4.5,74.0,2.42,70.4,4.8,4.04,76.5,81.6
+PE,PER,Peru,Americas,Latin America and the Caribbean,40.1,2024.0,income,34576665.0,18816.0,9684.0,3.43,5.1,10.7,77.9,1.96,85.6,5.12,1.53,51.8,82.0
+PH,PHL,Philippines,Asia,South-eastern Asia,39.3,2023.0,income,116786962.0,12577.0,4171.0,4.4,5.3,16.9,69.9,1.89,55.8,2.24,1.66,66.8,67.3
+PL,POL,Poland,Europe,Eastern Europe,28.5,2023.0,income,36435861.0,54262.0,28420.0,3.57,0.2,0.4,78.4,1.14,60.1,2.98,3.81,97.0,88.6
+PT,PRT,Portugal,Europe,Southern Europe,33.9,2023.0,income,10804871.0,53146.0,32082.0,1.86,0.4,0.7,82.4,1.41,61.5,6.16,2.34,86.4,88.5
+PR,PRI,Puerto Rico (US),Americas,Latin America and the Caribbean,,,,3184835.0,52196.0,40620.0,0.32,,,81.9,0.92,94.3,5.99,,90.5,87.3
+QA,QAT,Qatar,Asia,Western Asia,35.1,2017.0,income,2972215.0,128883.0,72525.0,2.9,0.0,0.0,82.5,1.72,99.4,0.13,1.27,100.2,98.1
+RO,ROU,Romania,Europe,Eastern Europe,29.8,2023.0,income,19020271.0,50895.0,22538.0,0.68,0.7,1.3,76.5,1.39,52.2,5.99,7.19,76.2,91.3
+RU,RUS,Russian Federation,Europe,Eastern Europe,33.0,2023.0,income,143513328.0,49568.0,17547.0,1.0,0.1,0.2,73.4,1.42,75.3,2.13,8.72,33.7,94.4
+RW,RWA,Rwanda,Africa,Sub-Saharan Africa,39.4,2023.0,consumption,14569341.0,4164.0,1124.0,9.38,38.6,62.2,68.0,3.64,30.9,11.36,5.91,56.7,31.7
+WS,WSM,Samoa,Oceania,Polynesia,38.7,2013.0,consumption,219306.0,9319.0,5873.0,4.2,4.5,11.5,71.8,3.8,17.5,5.0,2.21,70.6,21.2
+SM,SMR,San Marino,Europe,Southern Europe,,,,34109.0,78810.0,59871.0,0.4,,,85.8,1.16,97.2,,2.3,341.0,97.4
+ST,STP,Sao Tome and Principe,Africa,Sub-Saharan Africa,40.7,2017.0,consumption,240254.0,6388.0,4084.0,1.03,13.0,30.5,69.9,3.6,69.2,9.13,11.05,46.6,59.1
+SA,SAU,Saudi Arabia,Asia,Western Asia,,,,36973555.0,73784.0,34537.0,4.5,,,79.0,2.31,84.6,3.04,2.08,57.9,100.0
+SN,SEN,Senegal,Africa,Sub-Saharan Africa,36.2,2021.0,consumption,18931966.0,5463.0,1955.0,6.68,17.9,37.3,68.9,3.76,55.8,2.74,1.46,71.1,60.1
+RS,SRB,Serbia,Europe,Southern Europe,32.8,2023.0,income,6549143.0,33910.0,15262.0,2.03,1.1,2.1,76.0,1.64,62.6,7.12,3.89,112.9,87.7
+SC,SYC,Seychelles,Africa,Sub-Saharan Africa,32.1,2018.0,income,122730.0,35854.0,19449.0,5.8,0.7,1.4,76.3,1.85,45.5,,0.3,172.3,87.8
+SL,SLE,Sierra Leone,Africa,Sub-Saharan Africa,35.7,2018.0,consumption,8819794.0,3717.0,846.0,4.61,41.5,65.0,62.0,3.7,45.9,3.15,7.49,49.1,25.1
+SG,SGP,Singapore,Asia,South-eastern Asia,,,,6111175.0,163354.0,98814.0,5.03,,,83.3,0.97,100.0,2.82,0.9,320.3,94.4
+SX,SXM,Sint Maarten (Dutch part),Americas,Latin America and the Caribbean,,,,43923.0,56491.0,42978.0,3.4,,,76.5,1.44,100.0,,2.19,,
+SK,SVK,Slovak Republic,Europe,Eastern Europe,23.8,2023.0,income,5413813.0,49309.0,28544.0,0.81,0.5,0.8,78.4,1.46,53.2,5.36,4.0,170.3,89.8
+SI,SVN,Slovenia,Europe,Southern Europe,24.7,2023.0,income,2130986.0,59245.0,37376.0,1.06,0.0,0.0,82.3,1.52,56.0,3.18,2.37,151.9,90.8
+SB,SLB,Solomon Islands,Oceania,Melanesia,37.1,2012.0,consumption,838645.0,2788.0,2086.0,3.62,40.3,62.9,70.7,3.51,31.3,1.43,3.36,111.4,29.0
+SO,SOM,"Somalia, Fed. Rep.",Africa,Sub-Saharan Africa,,,,19654739.0,1643.0,661.0,2.99,,,59.0,6.01,55.1,18.95,,128.1,27.9
+ZA,ZAF,South Africa,Africa,Sub-Saharan Africa,54.1,2022.0,consumption,64747319.0,15906.0,6598.0,1.11,17.4,30.2,66.3,2.2,63.8,32.39,3.21,60.9,78.4
+SS,SSD,South Sudan,Africa,Sub-Saharan Africa,44.0,2016.0,consumption,12188788.0,1155.0,1080.0,-10.79,76.5,88.0,57.7,3.78,21.7,12.37,91.44,65.6,6.7
+ES,ESP,Spain,Europe,Southern Europe,33.4,2023.0,income,49355143.0,59868.0,38627.0,2.82,0.8,1.0,83.9,1.1,80.5,10.38,2.7,69.5,95.8
+LK,LKA,Sri Lanka,Asia,Southern Asia,37.7,2019.0,consumption,21756000.0,17065.0,5002.0,4.95,2.7,11.5,77.7,1.95,20.5,4.0,-4.76,41.8,54.6
+KN,KNA,St. Kitts and Nevis,Americas,Latin America and the Caribbean,,,,46922.0,36777.0,25223.0,2.69,,,72.3,1.53,31.9,,3.56,,76.9
+LC,LCA,St. Lucia,Americas,Latin America and the Caribbean,43.7,2015.0,consumption,180149.0,28674.0,14746.0,-0.57,0.1,0.3,72.8,1.38,29.1,9.45,2.03,,68.2
+MF,MAF,St. Martin (French part),Americas,Latin America and the Caribbean,,,,24941.0,,21668.0,4.9,,,80.4,2.67,100.0,,,,
+VC,VCT,St. Vincent and the Grenadines,Americas,Latin America and the Caribbean,,,,99924.0,22799.0,12562.0,3.39,,,71.4,1.76,48.0,18.0,0.82,,76.2
+SD,SDN,Sudan,Africa,Northern Africa,34.2,2014.0,consumption,51662147.0,2192.0,1165.0,3.06,10.1,26.0,66.5,4.26,34.9,7.53,138.81,2.4,18.6
+SR,SUR,Suriname,Americas,Latin America and the Caribbean,39.2,2022.0,consumption,639850.0,22652.0,7070.0,1.79,2.2,4.6,73.8,2.23,65.8,7.83,9.21,91.0,87.4
+SE,SWE,Sweden,Europe,Northern Europe,29.3,2023.0,income,10596620.0,72529.0,63133.0,1.54,0.8,0.9,84.1,1.43,89.1,8.69,0.68,104.3,95.8
+CH,CHE,Switzerland,Europe,Western Europe,33.8,2022.0,income,9092436.0,102513.0,114769.0,1.3,0.2,0.2,84.4,1.29,85.7,4.87,0.15,147.2,97.3
+SY,SYR,Syrian Arab Republic,Asia,Western Asia,26.4,2022.0,consumption,25620427.0,4905.0,1057.0,-0.2,18.0,42.1,72.6,2.7,72.1,13.57,13.42,35.4,33.8
+TJ,TJK,Tajikistan,Asia,Central Asia,36.1,2024.0,consumption,10786734.0,5923.0,1637.0,8.4,6.1,16.9,71.9,3.04,26.2,6.93,6.0,59.1,55.8
+TZ,TZA,Tanzania,Africa,Sub-Saharan Africa,40.5,2018.0,consumption,70545865.0,4471.0,1319.0,5.85,51.3,70.0,67.2,4.54,36.9,1.57,3.33,39.0,31.2
+TH,THA,Thailand,Asia,South-eastern Asia,33.3,2024.0,consumption,71619863.0,26250.0,8057.0,2.44,0.0,0.2,76.6,1.2,62.8,0.78,-0.13,138.4,90.9
+TL,TLS,Timor-Leste,Asia,South-eastern Asia,28.7,2014.0,consumption,1418517.0,4809.0,1341.0,6.98,44.0,71.4,67.9,2.63,28.8,1.59,0.43,95.4,35.0
+TG,TGO,Togo,Africa,Sub-Saharan Africa,37.9,2021.0,consumption,8591626.0,4079.0,1384.0,6.31,34.7,55.6,62.9,4.12,44.4,2.0,0.43,59.9,39.5
+TO,TON,Tonga,Oceania,Polynesia,27.1,2021.0,consumption,103742.0,8675.0,6547.0,2.8,0.4,1.8,73.1,3.1,21.2,2.01,5.59,77.6,67.4
+TT,TTO,Trinidad and Tobago,Americas,Latin America and the Caribbean,40.2,1992.0,income,1367764.0,37121.0,18967.0,-0.79,3.2,9.0,73.6,1.54,54.0,3.33,0.99,,82.2
+TN,TUN,Tunisia,Africa,Northern Africa,33.7,2021.0,consumption,12348573.0,15233.0,4657.0,2.49,0.7,2.4,76.7,1.82,70.7,15.11,5.15,101.4,76.5
+TR,TUR,Turkiye,Asia,Western Asia,43.7,2023.0,income,85878556.0,45288.0,18599.0,3.6,0.2,0.4,77.4,1.48,89.5,8.52,34.88,49.9,89.8
+TM,TKM,Turkmenistan,Asia,Central Asia,40.8,1998.0,consumption,7618847.0,22602.0,6540.0,6.3,35.1,55.6,70.2,2.66,47.1,4.27,,28.2,18.0
+TC,TCA,Turks and Caicos Islands,Americas,Latin America and the Caribbean,,,,46855.0,38010.0,37507.0,5.64,,,78.2,1.45,94.4,,,,0.0
+TV,TUV,Tuvalu,Oceania,Polynesia,39.1,2010.0,consumption,9492.0,6759.0,6041.0,1.64,9.0,21.2,67.3,3.17,65.4,,0.5,,35.2
+UG,UGA,Uganda,Africa,Sub-Saharan Africa,42.7,2019.0,consumption,51384894.0,3488.0,1206.0,6.33,59.8,76.3,68.5,4.16,31.9,2.75,3.58,50.2,8.9
+UA,UKR,Ukraine,Europe,Eastern Europe,25.6,2020.0,consumption,38980376.0,18905.0,5866.0,1.82,0.0,0.2,74.7,0.99,69.6,9.83,12.73,77.2,82.5
+AE,ARE,United Arab Emirates,Asia,Western Asia,26.4,2018.0,income,11513149.0,79344.0,50274.0,3.99,0.0,0.0,83.1,1.21,86.0,2.17,1.25,199.0,100.0
+GB,GBR,United Kingdom,Europe,Northern Europe,32.4,2021.0,income,69487000.0,64606.0,57602.0,1.39,0.4,0.5,81.4,1.55,83.3,4.75,3.88,62.5,95.5
+US,USA,United States,Americas,Northern America,41.8,2024.0,income,341784857.0,90027.0,90027.0,2.16,1.1,1.2,78.9,1.63,80.2,4.2,2.95,25.0,94.7
+UY,URY,Uruguay,Americas,Latin America and the Caribbean,40.0,2024.0,income,3384688.0,38315.0,25216.0,1.78,0.2,0.5,78.3,1.4,95.7,7.52,4.65,49.7,92.0
+UZ,UZB,Uzbekistan,Asia,Central Asia,32.7,2025.0,income,37053428.0,13601.0,3968.0,7.7,2.3,4.0,72.5,3.49,51.0,4.62,8.8,57.4,89.5
+VU,VUT,Vanuatu,Oceania,Melanesia,32.3,2019.0,consumption,335169.0,4525.0,4039.0,3.05,19.5,36.9,71.7,3.57,22.3,5.07,0.66,73.4,22.4
+VE,VEN,"Venezuela, RB",Americas,Latin America and the Caribbean,44.7,2006.0,income,28516896.0,21283.0,3495.0,1.57,9.7,16.4,72.7,2.08,89.3,5.31,254.95,25.0,76.7
+VN,VNM,Viet Nam,Asia,South-eastern Asia,36.1,2022.0,consumption,101598527.0,18088.0,5066.0,8.02,1.6,4.2,74.7,1.9,38.8,1.52,3.31,190.3,84.2
+VI,VIR,Virgin Islands (U.S.),Americas,Latin America and the Caribbean,,,,103792.0,49785.0,44321.0,-1.31,,,80.8,1.97,95.4,11.44,,205.6,64.4
+PS,PSE,West Bank and Gaza,Asia,Western Asia,36.4,2023.0,consumption,5413596.0,5000.0,3171.0,4.34,2.1,6.1,69.2,3.25,87.4,24.42,9.81,74.8,86.6
+YE,YEM,"Yemen, Rep.",Asia,Western Asia,36.7,2014.0,consumption,41773878.0,3164.0,634.0,0.75,33.3,57.7,69.4,4.5,37.0,17.32,8.1,56.1,17.5
+ZM,ZMB,Zambia,Africa,Sub-Saharan Africa,51.5,2022.0,consumption,21913874.0,4379.0,1318.0,3.76,71.7,81.4,66.5,4.04,45.9,5.92,13.91,62.5,17.1
+ZW,ZWE,Zimbabwe,Africa,Sub-Saharan Africa,50.3,2019.0,consumption,16950795.0,6470.0,3021.0,8.11,49.2,64.6,63.1,3.67,40.5,9.29,104.71,41.5,41.6
