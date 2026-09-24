@@ -69,3 +69,6 @@ temp/
 # These assist development but are not part of the published dataset.
 artifacts/
 !artifacts/.gitkeep
+
+# DBCode scratch export at project root (not part of the pipeline)
+countries-income-disparity.sql

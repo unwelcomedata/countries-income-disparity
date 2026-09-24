@@ -77,12 +77,35 @@ def load() -> tuple[pd.DataFrame, dict, dict]:
     return panel, welfare, breaks
 
 
+# Per-country panel suppressions: (iso3, column) -> short reason.
+# These are series that tie back faithfully to the World Bank source but carry
+# demographically IMPLAUSIBLE source values (not real events), so plotting the
+# line would mislead. We suppress the panel and label WHY rather than show it.
+#   CAF (Central African Republic) life expectancy: the WDI series whipsaws
+#   between ~50 and impossible lows (2009=14.7, 2019=31.5, 2022=18.8) — a
+#   modeling breakdown for a conflict state with weak vital registration, NOT a
+#   real demographic event like Rwanda 1994. Confirmed vs raw indicators_long.
+SUPPRESS: dict[tuple[str, str], str] = {
+    ("CAF", "life_expectancy"): "source values implausible",
+}
+
+
 def metrics_for(iso3: str, sub: pd.DataFrame, welfare: dict, breaks: dict) -> list[dict]:
     """Build the metric config list for one country (fact-based annotations only)."""
     wt = welfare.get(iso3)
     out = []
     for col, name, unit in METRIC_DEFS:
         m = {"col": col, "name": name, "unit": unit}
+        if (iso3, col) in SUPPRESS:
+            # Blank the series so the template renders the panel as unavailable,
+            # and carry the reason in the panel name. The template appends
+            # "(no data)", giving e.g. "Life expectancy — suppressed: source
+            # values implausible (no data)".
+            m["col"] = f"__suppressed__{col}"
+            m["name"] = f"{name} — suppressed: {SUPPRESS[(iso3, col)]}"
+            sub[m["col"]] = pd.NA
+            out.append(m)
+            continue
         if col == "gini_index":
             m["unit"] = f"Gini ({wt}-based)" if wt else "Gini"
             # documented survey/comparability break for THIS country
@@ -111,6 +134,8 @@ def scan_flags(iso3: str, sub: pd.DataFrame) -> list[str]:
         "urban_pct": 5.0,
     }
     for col, thr in plausible_max_yoy.items():
+        if (iso3, col) in SUPPRESS:
+            continue  # already adjudicated -> panel suppressed, don't re-flag as noise
         s = sub[["year", col]].dropna().sort_values("year")
         if len(s) >= 2:
             mx = s[col].diff().abs().max()
@@ -124,6 +149,29 @@ def scan_flags(iso3: str, sub: pd.DataFrame) -> list[str]:
     if sub["gini_index"].notna().sum() == 0:
         flags.append("no Gini data")
     return flags
+
+
+def is_gini_only(flags: list[str]) -> bool:
+    """True if a country is flagged ONLY because Gini data is missing/sparse.
+
+    Missing Gini is acceptable (the dashboard's Gini panel just renders
+    "(no data)"), so these countries are noise on the review sheet and are
+    suppressed from review.html. A country is Gini-only iff every flag is either
+    "no Gini data" or the sparse flag naming *exactly and only* gini_index.
+    A sparse flag that also names other columns is NOT Gini-only — it signals
+    other missing data worth reviewing.
+    """
+    if not flags:
+        return False
+    for f in flags:
+        if f == "no Gini data":
+            continue
+        if f.startswith("sparse:"):
+            cols = {c.strip() for c in f[len("sparse:"):].split(",")}
+            if cols == {"gini_index"}:
+                continue
+        return False
+    return True
 
 
 def main() -> None:
@@ -150,13 +198,20 @@ def main() -> None:
 
     (OUT / "flags.json").write_text(json.dumps(flags_all, indent=1))
 
-    n_flagged = sum(1 for _, _, f in cards if f)
-    _write_review_html(cards, n_flagged)
-    print(f"Done. {len(cards)} dashboards, {n_flagged} flagged. "
-          f"Open {OUT / 'review.html'}")
+    # Countries flagged ONLY for missing/sparse Gini are acceptable (their Gini
+    # panel just shows "(no data)"), so drop them from the review sheet to cut noise.
+    review_cards = [(iso3, name, flags) for iso3, name, flags in cards
+                    if not is_gini_only(flags)]
+    n_suppressed = len(cards) - len(review_cards)
+    n_flagged = sum(1 for _, _, f in review_cards if f)
+    _write_review_html(review_cards, n_flagged, n_suppressed, len(cards))
+    print(f"Done. {len(cards)} dashboards rendered; {n_suppressed} Gini-only "
+          f"countries suppressed from review; {len(review_cards)} shown "
+          f"({n_flagged} flagged). Open {OUT / 'review.html'}")
 
 
-def _write_review_html(cards: list[tuple[str, str, list[str]]], n_flagged: int) -> None:
+def _write_review_html(cards: list[tuple[str, str, list[str]]], n_flagged: int,
+                       n_suppressed: int = 0, n_total: int = 0) -> None:
     rows = []
     for iso3, name, flags in cards:
         flagged = bool(flags)
@@ -182,7 +237,7 @@ def _write_review_html(cards: list[tuple[str, str, list[str]]], n_flagged: int) 
 </style></head><body>
 <header>
  <h1>Country dashboards — review contact sheet</h1>
- <div class="meta">{len(cards)} countries · <b>{n_flagged} flagged</b> for data-quality review · dev-only (artifacts/)</div>
+ <div class="meta">{len(cards)} shown · <b>{n_flagged} flagged</b> for data-quality review · {n_suppressed} Gini-only countries suppressed{f' of {n_total} total' if n_total else ''} · dev-only (artifacts/)</div>
  <button onclick="document.body.classList.toggle('only-flagged')">Toggle: flagged only</button>
 </header>
 {''.join(rows)}
@@ -190,5 +245,38 @@ def _write_review_html(cards: list[tuple[str, str, list[str]]], n_flagged: int) 
     (OUT / "review.html").write_text(html, encoding="utf-8")
 
 
+def review_only() -> None:
+    """Rebuild review.html from the existing flags.json WITHOUT re-rendering PNGs.
+
+    Use when only the review-sheet logic changed (e.g. the Gini-only suppression
+    rule) and the dashboards themselves are unchanged.
+    """
+    flags_all = json.loads((OUT / "flags.json").read_text())
+    # country names come from the panel; load minimally.
+    con = duckdb.connect(str(PROJECT / "data" / "project.duckdb"), read_only=True)
+    names = {
+        r["iso_alpha3"]: r["country_name"]
+        for _, r in con.execute(
+            "SELECT DISTINCT iso_alpha3, country_name FROM countries_clean "
+            "WHERE iso_alpha3 IS NOT NULL"
+        ).df().iterrows()
+    }
+    con.close()
+    cards = sorted(
+        ((iso3, names.get(iso3, iso3), flags) for iso3, flags in flags_all.items()),
+        key=lambda c: c[1],
+    )
+    review_cards = [(iso3, name, flags) for iso3, name, flags in cards
+                    if not is_gini_only(flags)]
+    n_suppressed = len(cards) - len(review_cards)
+    n_flagged = sum(1 for _, _, f in review_cards if f)
+    _write_review_html(review_cards, n_flagged, n_suppressed, len(cards))
+    print(f"review.html rebuilt: {n_suppressed} Gini-only suppressed; "
+          f"{len(review_cards)} shown ({n_flagged} flagged).")
+
+
 if __name__ == "__main__":
-    main()
+    if "--review-only" in sys.argv:
+        review_only()
+    else:
+        main()

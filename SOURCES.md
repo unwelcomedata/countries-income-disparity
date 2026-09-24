@@ -142,6 +142,11 @@ apples-to-oranges comparisons.
   average). Check and label the welfare metric before comparing/ranking countries.
 - **Gini/income surveys are irregular** — the "year" is often the nearest survey year, not annual.
 - **PPP rebasing and PIP revisions** shift values across World Bank editions; use one edition.
+- **Vintage varies across secondary sites.** Because Gini reflects the nearest survey year and
+  editions differ, some countries appear with different values on third-party aggregators (e.g.
+  older South Africa figures around ~63 vs the recent PIP value used here). This project uses a
+  single, consistent recent PIP vintage throughout; a value differing from another site is
+  usually a survey-year/edition difference, not a discrepancy.
 
 ---
 
