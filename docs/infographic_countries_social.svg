@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  @unwelcomedata — PROJECT INFOGRAPHIC (landscape social render)
+  Project: countries-income-disparity
+  1600x900 feed render. Same brand FRAME formatting (header/footer/dividers),
+  re-laid into two columns. Numbers/colors identical to the tall poster.
+  LEFT column = the two Gini rankings (most unequal + most equal), each shown as
+  two non-comparable scales. RIGHT column = the catastrophe life-expectancy panels.
+  SPINE: income- and consumption-based Gini are two non-comparable scales,
+  shown SEPARATELY, never merged into one global ranking.
+  INCOME = gold (#EE9B00); CONSUMPTION = teal (#0A9396); structural = navy (#003049).
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900" font-family="Helvetica, Arial, sans-serif">
+
+  <!-- ===== CANVAS ===== -->
+  <rect width="1600" height="900" fill="#FBF8F0"/>
+
+  <!-- ============================================================= -->
+  <!-- HEADER BAND (navy)                                            -->
+  <!-- ============================================================= -->
+  <rect x="0" y="0" width="1600" height="190" fill="#003049"/>
+  <text x="80" y="88" fill="#FFFFFF" font-size="56" font-weight="bold">How Countries Compare</text>
+  <text x="80" y="134" fill="#94D2BD" font-size="33" font-weight="bold">There is no single &#8220;most unequal&#8221; list</text>
+  <text x="80" y="170" fill="#E9D8A6" font-size="21">Inequality is measured two non-comparable ways &#8212; income vs consumption &#8212; so the world can&#8217;t be ranked on one scale.</text>
+
+  <!-- vertical divider between the two columns -->
+  <line x1="800" y1="230" x2="800" y2="790" stroke="#E9D8A6" stroke-width="3"/>
+
+  <!-- ============================================================= -->
+  <!-- LEFT COLUMN — TWO RANKINGS, EACH ON TWO SCALES               -->
+  <!-- ============================================================= -->
+
+  <!-- ---- MOST UNEQUAL ---- -->
+  <text x="80" y="268" fill="#003049" font-size="30" font-weight="bold">The most UNEQUAL, two ways</text>
+  <text x="80" y="298" fill="#6B7280" font-size="19">The &#8220;most unequal&#8221; country depends on which measure you use.</text>
+
+  <!-- INCOME block -->
+  <rect x="80" y="320" width="320" height="7" fill="#EE9B00"/>
+  <text x="80" y="358" fill="#EE9B00" font-size="21" font-weight="bold">INCOME-based Gini</text>
+  <text x="80" y="432" fill="#003049" font-size="64" font-weight="bold">54.4</text>
+  <text x="248" y="406" fill="#6B7280" font-size="18">most unequal:</text>
+  <text x="248" y="432" fill="#003049" font-size="24" font-weight="bold">Colombia</text>
+
+  <!-- CONSUMPTION block -->
+  <rect x="440" y="320" width="320" height="7" fill="#0A9396"/>
+  <text x="440" y="358" fill="#0A9396" font-size="21" font-weight="bold">CONSUMPTION Gini</text>
+  <text x="440" y="432" fill="#003049" font-size="64" font-weight="bold">59.1</text>
+  <text x="608" y="406" fill="#6B7280" font-size="18">most unequal:</text>
+  <text x="608" y="432" fill="#003049" font-size="24" font-weight="bold">Namibia</text>
+
+  <line x1="420" y1="320" x2="420" y2="440" stroke="#E9D8A6" stroke-width="3"/>
+
+  <!-- gold divider inside left column -->
+  <line x1="80" y1="470" x2="760" y2="470" stroke="#E9D8A6" stroke-width="3"/>
+
+  <!-- ---- MOST EQUAL ---- -->
+  <text x="80" y="512" fill="#003049" font-size="30" font-weight="bold">The most EQUAL, two ways</text>
+  <text x="80" y="542" fill="#6B7280" font-size="19">The lowest Gini on each scale &#8212; still two separate lists.</text>
+
+  <!-- INCOME block -->
+  <rect x="80" y="564" width="320" height="7" fill="#EE9B00"/>
+  <text x="80" y="602" fill="#EE9B00" font-size="21" font-weight="bold">INCOME-based Gini</text>
+  <text x="80" y="676" fill="#003049" font-size="64" font-weight="bold">23.8</text>
+  <text x="248" y="648" fill="#6B7280" font-size="18">most equal:</text>
+  <text x="248" y="674" fill="#003049" font-size="22" font-weight="bold">Slovak Republic</text>
+
+  <!-- CONSUMPTION block -->
+  <rect x="440" y="564" width="320" height="7" fill="#0A9396"/>
+  <text x="440" y="602" fill="#0A9396" font-size="21" font-weight="bold">CONSUMPTION Gini</text>
+  <text x="440" y="676" fill="#003049" font-size="64" font-weight="bold">24.4</text>
+  <text x="608" y="648" fill="#6B7280" font-size="18">most equal:</text>
+  <text x="608" y="674" fill="#003049" font-size="24" font-weight="bold">Belarus</text>
+
+  <line x1="420" y1="564" x2="420" y2="684" stroke="#E9D8A6" stroke-width="3"/>
+
+  <text x="80" y="730" fill="#6B7280" font-size="18">Each number comes off a <tspan fill="#003049" font-weight="bold">different measuring stick</tspan> &#8212; income and</text>
+  <text x="80" y="754" fill="#6B7280" font-size="18">consumption Ginis are never two points on one global ranking.</text>
+
+  <!-- ============================================================= -->
+  <!-- RIGHT COLUMN — CATASTROPHE LIFE EXPECTANCY                    -->
+  <!-- ============================================================= -->
+  <text x="860" y="268" fill="#003049" font-size="30" font-weight="bold">What a catastrophe does to life expectancy</text>
+  <text x="860" y="298" fill="#6B7280" font-size="19">Four countries, each on its own scale &#8212; dot marks the crisis low.</text>
+
+  <!-- Cambodia -->
+  <text x="860" y="384" fill="#003049" font-size="21" font-weight="bold">Cambodia</text>
+  <polyline points="1030,350 1090,354 1140,380 1190,350 1230,346" fill="none" stroke="#005F73" stroke-width="3"/>
+  <circle cx="1140" cy="380" r="7" fill="#9B2226"/>
+  <text x="1250" y="384" fill="#6B7280" font-size="18">1977 &#183; Khmer Rouge</text>
+  <!-- Rwanda -->
+  <text x="860" y="440" fill="#003049" font-size="21" font-weight="bold">Rwanda</text>
+  <polyline points="1030,406 1095,410 1140,436 1200,408 1230,402" fill="none" stroke="#005F73" stroke-width="3"/>
+  <circle cx="1140" cy="436" r="7" fill="#9B2226"/>
+  <text x="1250" y="440" fill="#6B7280" font-size="18">1994 &#183; genocide</text>
+  <!-- Timor-Leste -->
+  <text x="860" y="496" fill="#003049" font-size="21" font-weight="bold">Timor-Leste</text>
+  <polyline points="1030,462 1090,466 1140,492 1195,468 1230,460" fill="none" stroke="#005F73" stroke-width="3"/>
+  <circle cx="1140" cy="492" r="7" fill="#9B2226"/>
+  <text x="1250" y="496" fill="#6B7280" font-size="18">1978 &#183; Indonesian occupation</text>
+  <!-- Syria -->
+  <text x="860" y="552" fill="#003049" font-size="21" font-weight="bold">Syria</text>
+  <polyline points="1030,518 1105,520 1150,544 1205,524 1230,520" fill="none" stroke="#005F73" stroke-width="3"/>
+  <circle cx="1150" cy="544" r="7" fill="#9B2226"/>
+  <text x="1250" y="552" fill="#6B7280" font-size="18">2015 &#183; civil war</text>
+
+  <!-- gold divider inside right column -->
+  <line x1="860" y1="588" x2="1520" y2="588" stroke="#E9D8A6" stroke-width="3"/>
+
+  <text x="860" y="632" fill="#6B7280" font-size="19">Each panel is scaled on its own &#8212; never cross-compared.</text>
+
+  <!-- ============================================================= -->
+  <!-- FOOTER BAND                                                   -->
+  <!-- ============================================================= -->
+  <rect x="0" y="810" width="1600" height="90" fill="#003049"/>
+  <text x="80" y="852" fill="#FFFFFF" font-size="22" font-weight="bold">@unwelcomedata</text>
+  <text x="80" y="882" fill="#94D2BD" font-size="18">World Bank WDI + Poverty &amp; Inequality Platform &#183; income- and consumption-based Gini are never mixed on one ranking &#183; 216 countries.</text>
+</svg>
