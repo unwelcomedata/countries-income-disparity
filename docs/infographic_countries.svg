@@ -97,32 +97,48 @@
   <text x="80" y="1332" fill="#003049" font-size="34" font-weight="bold">What a catastrophe does to life expectancy</text>
   <text x="80" y="1366" fill="#6B7280" font-size="24">Four countries, each on its own scale &#8212; dot marks the crisis low.</text>
 
-  <!-- Four life-expectancy "scar" motifs. Each row: COUNTRY NAME on the left (navy,
-       bold) and a sparkline + red crisis-low dot in the center. Rows generously
-       spaced (140px apart). Each polyline is a baseline with a dip (the dot =
-       crisis low) faithful to the shape of the drop; each panel is independently
-       scaled, never cross-compared.
+  <!-- Four life-expectancy "scar" motifs. Each row has THREE parts, aligned the
+       same way across all four rows:
+         LEFT   — COUNTRY NAME (navy #003049, bold) with the EVENT stacked directly
+                  underneath as a smaller muted-gray (#6B7280) line.
+         CENTER — the own-scale sparkline + RED crisis-low dot (unchanged geometry).
+         RIGHT  — a short story-style description (muted gray #6B7280), wrapping to
+                  ~2 lines inside its right-hand column (x 700..1120).
+       Rows generously spaced (140px apart). Each panel is independently scaled,
+       never cross-compared.
        Row centers: Cambodia 1470, Rwanda 1610, Timor-Leste 1750, Syria 1890. -->
 
   <!-- Cambodia -->
   <text x="80" y="1478" fill="#003049" font-size="26" font-weight="bold">Cambodia</text>
+  <text x="80" y="1508" fill="#6B7280" font-size="20">1977 &#183; Khmer Rouge</text>
   <polyline points="340,1438 420,1442 500,1486 560,1438 620,1430" fill="none" stroke="#005F73" stroke-width="4"/>
   <circle cx="500" cy="1486" r="9" fill="#9B2226"/>
+  <text x="700" y="1465" fill="#6B7280" font-size="22">A generation erased, then a nation</text>
+  <text x="700" y="1493" fill="#6B7280" font-size="22">rebuilt from almost nothing.</text>
 
   <!-- Rwanda -->
   <text x="80" y="1618" fill="#003049" font-size="26" font-weight="bold">Rwanda</text>
+  <text x="80" y="1648" fill="#6B7280" font-size="20">1994 &#183; genocide</text>
   <polyline points="340,1578 430,1584 500,1630 580,1582 620,1574" fill="none" stroke="#005F73" stroke-width="4"/>
   <circle cx="500" cy="1630" r="9" fill="#9B2226"/>
+  <text x="700" y="1605" fill="#6B7280" font-size="22">A hundred days that undid decades</text>
+  <text x="700" y="1633" fill="#6B7280" font-size="22">&#8212; and a recovery just as fast.</text>
 
   <!-- Timor-Leste -->
   <text x="80" y="1758" fill="#003049" font-size="26" font-weight="bold">Timor-Leste</text>
+  <text x="80" y="1788" fill="#6B7280" font-size="20">1978 &#183; Indonesian occupation</text>
   <polyline points="340,1718 420,1722 500,1766 570,1726 620,1716" fill="none" stroke="#005F73" stroke-width="4"/>
   <circle cx="500" cy="1766" r="9" fill="#9B2226"/>
+  <text x="700" y="1745" fill="#6B7280" font-size="22">Occupation and famine; the climb</text>
+  <text x="700" y="1773" fill="#6B7280" font-size="22">back took a generation.</text>
 
   <!-- Syria -->
   <text x="80" y="1898" fill="#003049" font-size="26" font-weight="bold">Syria</text>
+  <text x="80" y="1928" fill="#6B7280" font-size="20">2015 &#183; civil war</text>
   <polyline points="340,1858 450,1860 510,1906 580,1876 620,1872" fill="none" stroke="#005F73" stroke-width="4"/>
   <circle cx="510" cy="1906" r="9" fill="#9B2226"/>
+  <text x="700" y="1885" fill="#6B7280" font-size="22">War pulled a modern country backward,</text>
+  <text x="700" y="1913" fill="#6B7280" font-size="22">then it clawed most of it back.</text>
 
   <text x="80" y="2010" fill="#6B7280" font-size="21">Each panel is scaled on its own &#8212; never cross-compared.</text>
 
