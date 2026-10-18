@@ -16,6 +16,8 @@ keeping them apart — which is exactly what these charts do.
 > types **separately** and never merges them. Source: **World Bank WDI + Poverty & Inequality
 > Platform (PIP)**; survey years vary by country.
 
+[![How Countries Compare — income inequality infographic](docs/infographic_countries.png)](docs/infographic_countries.png)
+
 ---
 
 ## The most unequal — and the most equal — by survey type
